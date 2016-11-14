@@ -9,24 +9,29 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  Navigator
 } from 'react-native';
+
+import FirstPage from './src/js/component/FirstPage';
 
 export default class RNNavigatorDemo extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!8888
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
-      </View>
+     <Navigator
+        initialRoute = {{component:FirstPage}}
+//        configureScene = {
+//            (route) => {
+//                return route.scene || Navigator.SceneConfigs.FadeAndroid;
+//            }
+//        }
+        renderScene = {
+            (route,navigator) => {
+                let Component = route.component;
+                return <Component {...route.params} navigator={navigator} />
+            }
+        }
+     />
     );
   }
 }
