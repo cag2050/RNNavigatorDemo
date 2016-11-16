@@ -10,48 +10,37 @@ import {
 } from 'react-native';
 
 import FirstPage from './FirstPage';
-import ThirdPage from './ThirdPage';
 
 export default class SecondPage extends Component {
     constructor(props){
         super(props);
+        this.state={
+            id:null
+        };
     }
 
-    back(){
+    componentDidMount(){
+        this.setState({
+            id:this.props.id
+        })
+    }
+
+    _pressButton(){
         const {navigator} = this.props;
         if(navigator){
             navigator.pop();
         }
     }
 
-    gotoThird(){
-       const {navigator} = this.props;
-       if(navigator){
-        navigator.push({
-            component:ThirdPage,
-            params:{
-                id:2,
-                info:'from second page'
-            },
-            scene:Navigator.SceneConfigs.VerticalDownSwipeJump,
-        })
-       }
-
-    }
-
     render(){
         return(
             <View>
-                <Text>second page</Text>
-               <TouchableHighlight onPress= { ()=>this.back() }>
-                <Text>back</Text>
-               </TouchableHighlight>
-               <TouchableHighlight onPress= { ()=>this.gotoThird() }>
-                    <Text>gotoThird</Text>
-                </TouchableHighlight>
-                <Text>{this.props.id}</Text>
-                  <Text>{this.props.info}</Text>
+                <Text>从页面1获得的参数：{this.state.id}</Text>
+                 <TouchableHighlight onPress={this._pressButton.bind(this)}>
+                                <Text>点我跳回</Text>
+                 </TouchableHighlight>
             </View>
+
         )
     }
 }

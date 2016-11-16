@@ -10,60 +10,34 @@ import {
 } from 'react-native';
 
 import SecondPage from './SecondPage';
-import ThirdPage from './ThirdPage';
-
-class GotoNextPageComponent extends Component {
-    render(){
-        return (
-            <TouchableOpacity onPress={()=>{
-                this.props.that.gotoSecond(this.props.SceneName)
-            }}>
-                <Text>{this.props.SceneName} ==> SecondPage</Text>
-           </TouchableOpacity>
-        )
-    }
-}
-
-function createGotoNextPage(sceneName,key){
-    return <GotoNextPageComponent key={key} sceneName={sceneName} that={this} />
-}
 
 export default class FirstPage extends Component {
     constructor(props){
         super(props);
+        this.state = {
+            id:2
+        }
     }
 
-    gotoSecond(sceneName){
-        let sceneKey = Object.keys(Navigator.SceneConfigs)[3];
+    _pressButton(){
         const {navigator} = this.props;
         if(navigator){
             navigator.push({
+                name:'SecondPage',
                 component:SecondPage,
-//                scene:Navigator.SceneConfigs[sceneName],
+                params:{
+                    id:this.state.id
+                }
             })
         }
     }
 
-    gotoThird(){
-            const {navigator} = this.props;
-            if(navigator){
-                navigator.push({
-                    component:SecondPage,
-                    params:{
-                        id:1,
-                        info:'from FirstPage'
-                    }
-                })
-            }
-        }
-
-
     render(){
-        const sceneKeys = Object.keys(Navigator.SceneConfigs);
         return(
             <View>
-                <Text>first page</Text>
-                {sceneKeys.map(createGotoNextPage.bind(this))}
+                <TouchableHighlight onPress={this._pressButton.bind(this)}>
+                    <Text>点我跳转</Text>
+                </TouchableHighlight>
             </View>
         )
     }
