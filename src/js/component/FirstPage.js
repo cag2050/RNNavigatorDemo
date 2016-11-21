@@ -11,6 +11,8 @@ import {
 
 import SecondPage from './SecondPage';
 
+var styles = require('../../../src/css/style.js')
+
 export default class FirstPage extends Component {
     constructor(props){
         super(props);
@@ -38,46 +40,35 @@ export default class FirstPage extends Component {
 
     render(){
         return(
-            <View>
-                <Text style={styles.font20}>请听我讲一个爱情故事</Text>
-                <TouchableHighlight onPress={this._pressButton.bind(this)}>
-                    <Text style={[styles.colorBlue,styles.font16]}>点我跳转</Text>
-                </TouchableHighlight>
-                <TouchableHighlight >
-                    <Text>{this.props.aaaa}</Text>
-                </TouchableHighlight>
-                <Text>Copyright 山水一程</Text>
+//            <View>
+//                <Text style={styles.font20}>请听我讲一个爱情故事</Text>
+//                <TouchableHighlight onPress={this._pressButton.bind(this)}>
+//                    <Text style={[styles.colorBlue,styles.font16]}>点我跳转</Text>
+//                </TouchableHighlight>
+//                <TouchableHighlight >
+//                    <Text>{this.props.aaaa}</Text>
+//                </TouchableHighlight>
+//                <Text>Copyright 山水一程</Text>
+//            </View>
+            <View style={styles.flexContainer}>
+                <View style={styles.header}>
+                    <View style={[styles.home, styles.h_v_center]}>
+                        <Text>主页</Text>
+                    </View>
+                    <View style={[styles.subject, styles.h_v_center]}>
+                        <Text>请听我讲一个爱情故事</Text>
+                    </View>
+                    <View style={[styles.back, styles.h_v_center]}>
+                        <Text>后退</Text>
+                    </View>
+                </View>
+                <View style={[styles.article, styles.h_v_center]}>
+                    <Text>1</Text>
+                </View>
+                <View style={[styles.footer, styles.h_v_center]}>
+                    <Text>Copyright 山水一程</Text>
+                </View>
             </View>
         )
     }
 }
-
-const styles = StyleSheet.create({
-
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
-  },
-  colorBlue:{
-        color:'blue',
-  },
-  font16:{
-          fontSize:16
-  },
-  font20:{
-   fontSize:20
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
-
-});
