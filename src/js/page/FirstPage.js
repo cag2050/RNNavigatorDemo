@@ -11,29 +11,40 @@ import {
   ScrollView
 } from 'react-native';
 
-import FirstPage from './FirstPage';
-import SixthPage from './SixthPage';
+import Copyright from '../component/Copyright';
+import SecondPage from './SecondPage';
 
 var styles = require('../../../src/css/style.js');
 
-export default class FifthPage extends Component {
+export default class FirstPage extends Component {
     constructor(props){
         super(props);
+        // 此处state的值传给SecondPage
+        this.state = {
+            article2:"2.他们一起玩耍，直到3、4岁的时候，女孩去了另外一个城市。"
+        }
     }
     // props的值本页面使用
     static defaultProps={
-        article:"5.工作了，致我们终将逝去的大学，在不同的城市。"
+        article:"简单的爱情故事\n1.在一个宁静的小山村，男孩和女孩都来到了这个世界。"
     }
     _jumpForward(){
         const {navigator} = this.props;
+        const routers = navigator.getCurrentRoutes();
+        console.log(routers);
+        console.log(routers.length);
+        console.log(routers[0]);
         // 或者写成 const navigator = this.props.navigator;
         // 为什么这里可以取得 props.navigator?请看index.android.js中:
         // <Component {...route.params} navigator={navigator} />
         // 这里传递了navigator作为props
         if(navigator){
             navigator.push({
-                name:'SixthPage',
-                component:SixthPage
+                name:'SecondPage',
+                component:SecondPage,
+                params:{
+                    article2:this.state.article2
+                }
             })
         }
     }
@@ -80,9 +91,7 @@ export default class FifthPage extends Component {
                         </TouchableOpacity>
                     </ScrollView>
                 </View>
-                <View style={[styles.footer, styles.h_v_center]}>
-                    <Text>Copyright 山水一程</Text>
-                </View>
+                <Copyright />
             </View>
         )
     }

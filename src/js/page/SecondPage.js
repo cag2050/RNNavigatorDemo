@@ -11,6 +11,7 @@ import {
   ScrollView
 } from 'react-native';
 
+import Copyright from '../component/Copyright';
 import FirstPage from './FirstPage';
 import ThirdPage from './ThirdPage';
 
@@ -90,9 +91,7 @@ export default class SecondPage extends Component {
                                     </TouchableOpacity>
                                 </ScrollView>
                             </View>
-                            <View style={[styles.footer, styles.h_v_center]}>
-                                <Text>Copyright 山水一程</Text>
-                            </View>
+                            <Copyright />
                         </View>
         )
     }

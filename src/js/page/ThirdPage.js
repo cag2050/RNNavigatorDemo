@@ -11,18 +11,19 @@ import {
   ScrollView
 } from 'react-native';
 
+import Copyright from '../component/Copyright';
 import FirstPage from './FirstPage';
-import FifthPage from './FifthPage';
+import FourthPage from './FourthPage';
 
 var styles = require('../../../src/css/style.js');
 
-export default class FourthPage extends Component {
+export default class ThirdPage extends Component {
     constructor(props){
         super(props);
     }
     // props的值本页面使用
     static defaultProps={
-        article:"4.女孩毕业了，在J城市工作，男孩毕业了，在B城市工作。"
+        article:"3.男孩和女孩生活在各自的轨道上，小学、初中、高中、大学，生活有酸甜苦辣。"
     }
     _jumpForward(){
         const {navigator} = this.props;
@@ -32,8 +33,8 @@ export default class FourthPage extends Component {
         // 这里传递了navigator作为props
         if(navigator){
             navigator.push({
-                name:'FifthPage',
-                component:FifthPage
+                name:'FourthPage',
+                component:FourthPage
             })
         }
     }
@@ -80,9 +81,7 @@ export default class FourthPage extends Component {
                         </TouchableOpacity>
                     </ScrollView>
                 </View>
-                <View style={[styles.footer, styles.h_v_center]}>
-                    <Text>Copyright 山水一程</Text>
-                </View>
+                <Copyright />
             </View>
         )
     }
