@@ -63,6 +63,9 @@ export default class FirstPage extends Component {
                     </View>
                 </View>
                 <View style={[styles.article, styles.h_v_center]}>
+                    <TouchableHighlight onPress={this._pressButton.bind(this)}>
+                        <Text>点我跳转</Text>
+                    </TouchableHighlight>
                     <Text>1</Text>
                 </View>
                 <View style={[styles.footer, styles.h_v_center]}>
