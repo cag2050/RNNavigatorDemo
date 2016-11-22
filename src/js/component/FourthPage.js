@@ -11,21 +11,18 @@ import {
   ScrollView
 } from 'react-native';
 
-import SecondPage from './SecondPage';
+import FirstPage from './FirstPage';
+import FifthPage from './FifthPage';
 
 var styles = require('../../../src/css/style.js');
 
-export default class FirstPage extends Component {
+export default class FourthPage extends Component {
     constructor(props){
         super(props);
-        // 此处state的值传给SecondPage
-        this.state = {
-            article2:"2.他们一起玩耍，直到3、4岁的时候，女孩去了另外一个城市。"
-        }
     }
     // props的值本页面使用
     static defaultProps={
-        article:"简单的爱情故事\n1.在一个宁静的小山村，男孩和女孩都来到了这个世界。"
+        article:"4.女孩毕业了，在J城市工作，男孩毕业了，在B城市工作。"
     }
     _jumpForward(){
         const {navigator} = this.props;
@@ -35,11 +32,8 @@ export default class FirstPage extends Component {
         // 这里传递了navigator作为props
         if(navigator){
             navigator.push({
-                name:'SecondPage',
-                component:SecondPage,
-                params:{
-                    article2:this.state.article2
-                }
+                name:'FifthPage',
+                component:FifthPage
             })
         }
     }
