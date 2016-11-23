@@ -13,7 +13,7 @@ import {
   Navigator
 } from 'react-native';
 
-import FirstPage from './src/js/component/FirstPage';
+import FirstPage from './src/js/page/FirstPage';
 
 export default class RNNavigatorDemo extends Component {
   render() {
