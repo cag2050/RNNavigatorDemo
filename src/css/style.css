@@ -15,6 +15,12 @@ html, body {
             justify-content: center; /*水平居中*/
             align-items: center;/*垂直居中*/
         }
+        .h_left_v_center {
+                    display: flex;
+                    display: -webkit-flex;
+                    justify-content: flex-start; /*水平居中*/
+                    align-items: center;/*垂直居中*/
+        }
         .flex1 {
             flex:1;
         }
