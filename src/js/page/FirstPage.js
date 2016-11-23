@@ -45,18 +45,17 @@ export default class FirstPage extends Component {
         }
     }
     _jumpToHome(){
-            const {navigator} = this.props;
-            const routers = navigator.getCurrentRoutes();
-            console.log(routers);
-            console.log(routers.length);
-            console.log(routers[0].component );
-            if(navigator){
-                navigator.push({
-                    name:'FirstPage',
-                    component:FirstPage
-                })
-            }
+        const {navigator} = this.props;
+        const routers = navigator.getCurrentRoutes();
+        // routers[0].component.name:获取当前路由名字
+        // 如果当前路由是首页FirstPage，点击首页，不跳转
+        if(navigator && routers[0].component.name != "FirstPage"){
+            navigator.push({
+                name:'FirstPage',
+                component:FirstPage
+            })
         }
+    }
     _jumpBack(){
             const {navigator} = this.props;
             if(navigator){
