@@ -1,34 +1,33 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Navigator,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  ScrollView
-} from 'react-native';
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    Navigator,
+    TouchableOpacity,
+    TouchableHighlight,
+    TouchableNativeFeedback,
+    ScrollView
+    } from 'react-native';
 
 var styles = require('../../../src/css/style.js');
 
 export default class Copyright extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
-        this.state={
-        };
+        this.state = {};
     }
 
-    static defaultPorps(){
+    static defaultPorps() {
 
     }
 
-    render(){
-            return(
-                    <View style={[styles.footer, styles.h_v_center]}>
-                        <Text>Copyright 山水一程</Text>
-                    </View>
-            )
-        }
+    render() {
+        return (
+            <View style={[styles.footer, styles.h_v_center]}>
+                <Text>Copyright 山水一程</Text>
+            </View>
+        )
+    }
 }

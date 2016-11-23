@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Navigator,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  ScrollView
-} from 'react-native';
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    Navigator,
+    TouchableOpacity,
+    TouchableHighlight,
+    TouchableNativeFeedback,
+    ScrollView
+    } from 'react-native';
 
 import Copyright from '../component/Copyright';
 import FirstPage from './FirstPage';
@@ -18,44 +18,48 @@ import FourthPage from './FourthPage';
 var styles = require('../../../src/css/style.js');
 
 export default class ThirdPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
+
     // props的值本页面使用
-    static defaultProps={
-        article:"3.男孩和女孩生活在各自的轨道上，小学、初中、高中、大学，生活有酸甜苦辣。"
+    static defaultProps = {
+        article: "3.男孩和女孩生活在各自的轨道上，小学、初中、高中、大学，生活有酸甜苦辣。"
     }
-    _jumpForward(){
+
+    _jumpForward() {
         const {navigator} = this.props;
         // 或者写成 const navigator = this.props.navigator;
         // 为什么这里可以取得 props.navigator?请看index.android.js中:
         // <Component {...route.params} navigator={navigator} />
         // 这里传递了navigator作为props
-        if(navigator){
+        if (navigator) {
             navigator.push({
-                name:'FourthPage',
-                component:FourthPage
+                name: 'FourthPage',
+                component: FourthPage
             })
         }
     }
-    _jumpToHome(){
-            const {navigator} = this.props;
-            if(navigator){
-                navigator.push({
-                    name:'FirstPage',
-                    component:FirstPage
-                })
-            }
+
+    _jumpToHome() {
+        const {navigator} = this.props;
+        if (navigator) {
+            navigator.push({
+                name: 'FirstPage',
+                component: FirstPage
+            })
         }
-    _jumpBack(){
-            const {navigator} = this.props;
-            if(navigator){
-                navigator.pop();
-            }
     }
 
-    render(){
-        return(
+    _jumpBack() {
+        const {navigator} = this.props;
+        if (navigator) {
+            navigator.pop();
+        }
+    }
+
+    render() {
+        return (
             <View style={styles.flexContainer}>
                 <View style={styles.header}>
                     <View style={[styles.home, styles.h_v_center]}>

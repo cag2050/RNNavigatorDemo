@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import {
-  AppRegistry,
-  StyleSheet,
-  Text,
-  View,
-  Navigator,
-  TouchableOpacity,
-  TouchableHighlight,
-  TouchableNativeFeedback,
-  ScrollView
-} from 'react-native';
+    AppRegistry,
+    StyleSheet,
+    Text,
+    View,
+    Navigator,
+    TouchableOpacity,
+    TouchableHighlight,
+    TouchableNativeFeedback,
+    ScrollView
+    } from 'react-native';
 
 import Copyright from '../component/Copyright';
 import FirstPage from './FirstPage';
@@ -17,32 +17,34 @@ import FirstPage from './FirstPage';
 var styles = require('../../../src/css/style.js');
 
 export default class TenthPage extends Component {
-    constructor(props){
+    constructor(props) {
         super(props);
     }
+
     // props的值本页面使用
-    static defaultProps={
-        article:"10.十全十美，祝福男孩和女孩的生活。"
+    static defaultProps = {
+        article: "10.十全十美，祝福男孩和女孩的生活。"
     }
 
-    _jumpToHome(){
-            const {navigator} = this.props;
-            if(navigator){
-                navigator.push({
-                    name:'FirstPage',
-                    component:FirstPage
-                })
-            }
+    _jumpToHome() {
+        const {navigator} = this.props;
+        if (navigator) {
+            navigator.push({
+                name: 'FirstPage',
+                component: FirstPage
+            })
         }
-    _jumpBack(){
-            const {navigator} = this.props;
-            if(navigator){
-                navigator.pop();
-            }
     }
 
-    render(){
-        return(
+    _jumpBack() {
+        const {navigator} = this.props;
+        if (navigator) {
+            navigator.pop();
+        }
+    }
+
+    render() {
+        return (
             <View style={styles.flexContainer}>
                 <View style={styles.header}>
                     <View style={[styles.home, styles.h_v_center]}>

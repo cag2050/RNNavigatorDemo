@@ -1,58 +1,61 @@
 html, body {
-            margin: 0;
-            padding: 0;
-        }
+    margin: 0;
+    padding: 0;
+}
 
-        .flexContainer {
-            display: flex;
-            display: -webkit-flex;
-            flex-direction: column; /*竖直排列*/
-            flex:1;
-        }
-        .h_v_center {
-            display: flex;
-            display: -webkit-flex;
-            justify-content: center; /*水平居中*/
-            align-items: center;/*垂直居中*/
-        }
-        .h_left_v_center {
-                    display: flex;
-                    display: -webkit-flex;
-                    justify-content: flex-start; /*水平居中*/
-                    align-items: center;/*垂直居中*/
-        }
-        .flex1 {
-            flex:1;
-        }
+.flexContainer {
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: column; /*竖直排列*/
+    flex: 1;
+}
 
-        .header {
-            flex: 1; /*占据几份*/
-            display: flex;
-            display: -webkit-flex;
-            flex-direction: row; /*横向排列*/
-        }
+.h_v_center {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: center; /*水平居中*/
+    align-items: center; /*垂直居中*/
+}
 
-        .home {
-            flex: 1; /*占据几份*/
-            background-color: red;
-        }
+.h_left_v_center {
+    display: flex;
+    display: -webkit-flex;
+    justify-content: flex-start; /*水平居中*/
+    align-items: center; /*垂直居中*/
+}
 
-        .subject {
-            flex: 4; /*占据几份*/
-            background-color: yellowgreen;
-        }
+.flex1 {
+    flex: 1;
+}
 
-        .back {
-            flex: 1; /*占据几份*/
-            background-color: lightgrey;
-        }
+.header {
+    flex: 1; /*占据几份*/
+    display: flex;
+    display: -webkit-flex;
+    flex-direction: row; /*横向排列*/
+}
 
-        .article {
-            flex: 6; /*占据几份*/
-            background-color: yellow;
-        }
+.home {
+    flex: 1; /*占据几份*/
+    background-color: red;
+}
 
-        .footer {
-            flex: 1; /*占据几份*/
-            background-color: gray;
-        }
+.subject {
+    flex: 4; /*占据几份*/
+    background-color: yellowgreen;
+}
+
+.back {
+    flex: 1; /*占据几份*/
+    background-color: lightgrey;
+}
+
+.article {
+    flex: 6; /*占据几份*/
+    background-color: yellow;
+}
+
+.footer {
+    flex: 1; /*占据几份*/
+    background-color: gray;
+}
