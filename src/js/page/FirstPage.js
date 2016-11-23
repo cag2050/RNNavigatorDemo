@@ -30,10 +30,6 @@ export default class FirstPage extends Component {
     }
     _jumpForward(){
         const {navigator} = this.props;
-        const routers = navigator.getCurrentRoutes();
-        console.log(routers);
-        console.log(routers.length);
-        console.log(routers[0]);
         // 或者写成 const navigator = this.props.navigator;
         // 为什么这里可以取得 props.navigator?请看index.android.js中:
         // <Component {...route.params} navigator={navigator} />
@@ -50,6 +46,10 @@ export default class FirstPage extends Component {
     }
     _jumpToHome(){
             const {navigator} = this.props;
+            const routers = navigator.getCurrentRoutes();
+            console.log(routers);
+            console.log(routers.length);
+            console.log(routers[0].component );
             if(navigator){
                 navigator.push({
                     name:'FirstPage',
@@ -83,29 +83,10 @@ export default class FirstPage extends Component {
                     </View>
                 </View>
                 <View style={[styles.article, styles.h_v_center]}>
-                    <ScrollView contentContainerStyle={styles.h_v_center}
+                    <ScrollView contentContainerStyle={[styles.flex1,styles.h_v_center]}
                         showsVerticalScrollIndicator={true}>
                         <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}{this.props.article}{this.props.article}{this.props.article}简单的爱情故事\n1.在一个宁静的小山村，男孩和女孩都来到了这个世界。</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>{this.props.article}</Text>
-                        <Text>------------------------------------</Text>
-                        <Text>------重复显示多次，测试滚动条-------</Text>
-                        <Text>------------------------------------</Text>
+                        <Text>----------------------</Text>
                         <TouchableOpacity onPress={this._jumpForward.bind(this)}>
                             <Text>前进>></Text>
                         </TouchableOpacity>

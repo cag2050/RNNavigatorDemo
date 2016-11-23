@@ -83,9 +83,34 @@ export default class SecondPage extends Component {
                                 </View>
                             </View>
                             <View style={[styles.article, styles.h_v_center]}>
-                                <ScrollView contentContainerStyle={[styles.flex1,styles.h_v_center]}>
+                                <ScrollView contentContainerStyle={styles.h_v_center}>
                                     <Text>{this.state.article2}</Text>
-                                    <Text>----------------------</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}2.他们一起玩耍，直到3、4岁的时候，女孩去了另外一个城市。2.他们一起玩耍，直到3、4岁的时候，女孩去了另外一个城市。</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>{this.state.article2}</Text>
+                                    <Text>------------------------------------</Text>
+                                    <Text>------重复显示多次，测试滚动条-------</Text>
+                                    <Text>------------------------------------</Text>
                                     <TouchableOpacity onPress={this._jumpForward.bind(this)}>
                                         <Text>前进>></Text>
                                     </TouchableOpacity>
