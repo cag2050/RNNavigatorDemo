@@ -12,6 +12,7 @@ import {
     } from 'react-native';
 
 import Copyright from '../component/Copyright';
+import GetMoviesFromApi from '../component/GetMoviesFromApi';
 import FirstPage from './FirstPage';
 import EighthPage from './EighthPage';
 
@@ -25,7 +26,7 @@ export default class SeventhPage extends Component {
     // props的值本页面使用
     static defaultProps = {
         article: "7.恋爱的时光总是过得很快，时光因为短暂，所以珍贵。"
-    }
+    };
 
     _jumpForward() {
         const {navigator} = this.props;
@@ -85,6 +86,7 @@ export default class SeventhPage extends Component {
                         </TouchableOpacity>
                     </ScrollView>
                 </View>
+                <GetMoviesFromApi />
                 <Copyright />
             </View>
         )
