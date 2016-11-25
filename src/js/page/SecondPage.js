@@ -25,8 +25,8 @@ export default class SecondPage extends Component {
         };
     }
 
-    static defaultPorps() {
-
+    static defaultPorps= {
+        aaa:"aaa"
     }
 
     // SecondPage获取从FirstPage传来的article2的值

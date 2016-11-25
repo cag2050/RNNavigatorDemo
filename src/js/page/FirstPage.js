@@ -13,6 +13,14 @@ import {
 
 import Copyright from '../component/Copyright';
 import SecondPage from './SecondPage';
+import ThirdPage from './ThirdPage';
+import FourthPage from './FourthPage';
+import FifthPage from './FifthPage';
+import SixthPage from './SixthPage';
+import SeventhPage from './SeventhPage';
+import EighthPage from './EighthPage';
+import NinthPage from './NinthPage';
+import TenthPage from './TenthPage';
 
 var styles = require('../../../src/css/style.js');
 
@@ -27,7 +35,28 @@ export default class FirstPage extends Component {
 
     // props的值本页面使用
     static defaultProps = {
+        pages: {
+                page1:{name:"FirstPage",component:FirstPage},
+                page2:{name:"SecondPage",component:SecondPage},
+                page3:{name:"ThirdPage",component:ThirdPage},
+                page4:{name:"FourthPage",component:FourthPage},
+                page5:{name:"FifthPage",component:FifthPage},
+                page6:{name:"SixthPage",component:SixthPage},
+                page7:{name:"SeventhPage",component:SeventhPage},
+                page8:{name:"EighthPage",component:EighthPage},
+                page9:{name:"NinthPage",component:NinthPage},
+
+                page10:{name:"TenthPage",component:TenthPage}
+            },
         article: "简单的爱情故事\n1.在一个宁静的小山村，男孩和女孩都来到了这个世界。"
+    }
+
+    componentWillMount(){
+
+    }
+
+    componentDidMount() {
+        console.log(this.props.pages.page2.component);
     }
 
     _jumpForward() {
@@ -59,6 +88,19 @@ export default class FirstPage extends Component {
             })
         }
     }
+    // 跳转的指定的页面:传入页面对象
+     _jumpTo(component) {
+            const {navigator} = this.props;
+            if (navigator) {
+                navigator.push({
+                    name: component.name,
+                    component: component.component,
+                    params: {
+                        article2: this.state.article2
+                    }
+                })
+            }
+        }
 
     _jumpBack() {
         const {navigator} = this.props;
@@ -86,12 +128,40 @@ export default class FirstPage extends Component {
                     </View>
                 </View>
                 <View style={[styles.article, styles.h_v_center]}>
-                    <ScrollView contentContainerStyle={[styles.flex1,styles.h_v_center]}
+                    <ScrollView contentContainerStyle={styles.h_v_center}
                                 showsVerticalScrollIndicator={true}>
                         <Text>{this.props.article}</Text>
                         <Text>----------------------</Text>
                         <TouchableOpacity onPress={this._jumpForward.bind(this)}>
                             <Text>前进>></Text>
+                        </TouchableOpacity>
+                        <Text>{"\n"}</Text>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page2)}}>
+                            <Text>第2页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page3)}}>
+                            <Text>第3页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page4)}}>
+                            <Text>第4页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page5)}}>
+                            <Text>第5页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page6)}}>
+                            <Text>第6页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page7)}}>
+                            <Text>第7页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page8)}}>
+                            <Text>第8页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page9)}}>
+                            <Text>第9页</Text>
+                        </TouchableOpacity>
+                        <TouchableOpacity onPress={()=>{this._jumpTo(this.props.pages.page10)}}>
+                            <Text>第10页</Text>
                         </TouchableOpacity>
                     </ScrollView>
                 </View>
