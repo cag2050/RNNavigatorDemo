@@ -5,4 +5,4 @@
 使用了Navigator，ScrollView，ListView
 
 1.运行命令：npm install，安装需要的包；  
-2.连接android手机，运行命令：react-native run-android，配置好host IP：8081，查看app；  
+2.连接android手机，运行命令：react-native run-android，手机配置好电脑IP：8081，查看app；  
