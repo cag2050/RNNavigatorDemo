@@ -19,7 +19,7 @@ export default class Copyright extends Component {
         this.state = {};
     }
 
-    static defaultPorps() {
+    static defaultProps() {
 
     }
 

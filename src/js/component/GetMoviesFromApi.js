@@ -3,15 +3,9 @@
  */
 import React, { Component } from 'react';
 import {
-    AppRegistry,
     StyleSheet,
     Text,
     View,
-    Navigator,
-    TouchableOpacity,
-    TouchableHighlight,
-    TouchableNativeFeedback,
-    ScrollView,
     ListView
     } from 'react-native';
 
@@ -20,7 +14,7 @@ var styles = require('../../../src/css/style.js');
 export default class GetMoviesFromApi extends Component {
     constructor(props) {
         super(props);
-        const ds = ListView.DataSource({
+        const ds = new ListView.DataSource({
             rowHasChanged: (r1, r2)=> r1 !== r2
         });
         this.state = {
@@ -30,7 +24,7 @@ export default class GetMoviesFromApi extends Component {
         };
     }
 
-    static defaultPorps() {
+    static defaultProps() {
 
     }
 

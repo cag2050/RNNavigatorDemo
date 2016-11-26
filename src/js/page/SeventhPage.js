@@ -84,9 +84,11 @@ export default class SeventhPage extends Component {
                         <TouchableOpacity onPress={this._jumpForward.bind(this)}>
                             <Text>前进>></Text>
                         </TouchableOpacity>
+                        <Text>----------------------</Text>
+                        <Text>--------ListView 例子--------</Text>
+                        <GetMoviesFromApi />
                     </ScrollView>
                 </View>
-                <GetMoviesFromApi />
                 <Copyright />
             </View>
         )
