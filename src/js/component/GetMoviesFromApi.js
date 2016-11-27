@@ -31,8 +31,21 @@ export default class GetMoviesFromApi extends Component {
     }
 
     fetchData() {
-        let REQUEST_URL = "http://api.douban.com/v2/movie/in_theaters";
+        let REQUEST_URL = "http://api.douban.com/v2/movie/in_theaters?city=济南";
         fetch(REQUEST_URL)
+            // fetch post方式不成功，未知原因
+            //fetch(REQUEST_URL, {
+            //    method: "post",
+            //    headers: {
+            //        'Accept': 'application/json',
+            //        'Content-Type': 'application/json'
+            //    },
+            //    //body: {city: 济南}
+            //    //body: "city=济南"
+            //    body: JSON.stringify({
+            //        city: "济南"
+            //    })
+            //})
             .then((response) => response.json())
             .then((responseData)=> {
                 this.setState({
