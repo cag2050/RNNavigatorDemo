@@ -55,7 +55,7 @@ export default class FirstPage extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props.pages.page2.component);
+        //console.log(this.props.pages.page2.component);
     }
 
     _jumpForward() {

@@ -85,7 +85,7 @@ export default class SeventhPage extends Component {
                             <Text>前进>></Text>
                         </TouchableOpacity>
                         <Text>----------------------</Text>
-                        <Text>--------ListView 例子--------</Text>
+                        <Text>--顺便告诉你济南正在热映的电影(ListView+Fetch实现)--</Text>
                         <GetMoviesFromApi />
                     </ScrollView>
                 </View>
